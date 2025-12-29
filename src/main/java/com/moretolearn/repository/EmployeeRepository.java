@@ -1,10 +1,12 @@
-package com.moretolearn;
+package com.moretolearn.repository;
 
 import java.util.List;
 import java.util.stream.Stream;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+
+import com.moretolearn.entity.Employee;
 
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 

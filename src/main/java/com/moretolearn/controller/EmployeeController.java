@@ -1,4 +1,4 @@
-package com.moretolearn;
+package com.moretolearn.controller;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -20,6 +20,8 @@ import org.springframework.web.servlet.mvc.method.annotation.StreamingResponseBo
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.moretolearn.entity.Employee;
+import com.moretolearn.service.EmployeeService;
 
 @CrossOrigin(origins = "*")
 @RestController
