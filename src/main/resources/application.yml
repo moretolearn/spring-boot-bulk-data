@@ -1,0 +1,115 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/mydb?useCursorFetch=true
+    username: root
+    password: root
+    hikari:
+      auto-commit: false
+      maximum-pool-size: 10
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+    open-in-view: false
+    properties:
+      hibernate.jdbc.fetch_size: 1000
+
+server:
+  compression:
+    enabled: false
+  tomcat:
+    max-swallow-size: -1
+
+#StreamingResponseBody
+
+#spring:
+#  application:
+#    name: streaming-response-body-service
+#
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/mydb?useCursorFetch=true
+#    username: root
+#    password: root
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    hikari:
+#      auto-commit: false              # 🔥 REQUIRED for cursor streaming
+#      maximum-pool-size: 10
+#      minimum-idle: 2
+#      connection-timeout: 30000
+#
+#  jpa:
+#    hibernate:
+#      ddl-auto: none
+#    show-sql: false
+#    open-in-view: false               # 🔥 REQUIRED
+#    properties:
+#      hibernate.jdbc.fetch_size: 1000 # 🔥 REQUIRED
+#      hibernate.format_sql: false
+#
+#server:
+#  port: 8080
+#
+#  compression:
+#    enabled: false                    # 🔥 MUST disable buffering
+#
+#  tomcat:
+#    max-swallow-size: -1              # allow large streaming responses
+#    threads:
+#      max: 200
+#      min-spare: 10
+#
+#logging:
+#  level:
+#    org.hibernate.SQL: WARN
+#    org.springframework.web.servlet.mvc.method.annotation.StreamingResponseBodyReturnValueHandler: DEBUG
+
+#ResponseBodyEmitter
+
+#spring:
+#  application:
+#    name: emitter-with-db-service
+#
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/mydb
+#    username: root
+#    password: root
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    hikari:
+#      maximum-pool-size: 10
+#      minimum-idle: 2
+#      auto-commit: true        # ✅ REQUIRED for async emitter
+#      connection-timeout: 30000
+#
+#  jpa:
+#    hibernate:
+#      ddl-auto: none
+#    show-sql: false
+#    open-in-view: false        # still recommended
+#    properties:
+#      hibernate.format_sql: false
+#      hibernate.jdbc.batch_size: 50
+#
+#  mvc:
+#    async:
+#      request-timeout: -1      # 🔥 MUST for ResponseBodyEmitter
+#
+#  jackson:
+#    serialization:
+#      flush-after-write-value: true
+#
+#server:
+#  port: 8080
+#
+#  compression:
+#    enabled: false             # 🔥 MUST: avoid buffering
+#
+#  tomcat:
+#    max-swallow-size: -1
+#    threads:
+#      max: 200
+#      min-spare: 10
+#
+#logging:
+#  level:
+#    org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitterReturnValueHandler: INFO

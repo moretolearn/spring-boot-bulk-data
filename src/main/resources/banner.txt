@@ -1,0 +1,14 @@
+${AnsiColor.BRIGHT_CYAN}
+,--.   ,--.                      ,--------.       ,--.                                  
+|   `.'   | ,---. ,--.--. ,---.  '--.  .--',---.  |  |    ,---.  ,--,--.,--.--.,--,--,  
+|  |'.'|  || .-. ||  .--'| .-. :    |  |  | .-. | |  |   | .-. :' ,-.  ||  .--'|      \ 
+|  |   |  |' '-' '|  |   \   --.    |  |  ' '-' ' |  '--.\   --.\ '-'  ||  |   |  ||  | 
+`--'   `--' `---' `--'    `----'    `--'   `---'  `-----' `----' `--`--'`--'   `--''--' 
+${AnsiColor.DEFAULT}
+${AnsiColor.GREEN}::SpringBoot::              (v${spring-boot.version})
+${AnsiColor.MAGENTA}
+Application : ${spring.application.name}
+Spring Boot : ${spring-boot.version}
+Environment : ${spring.profiles.active}
+Java        : ${java.version}
+${AnsiColor.DEFAULT}
